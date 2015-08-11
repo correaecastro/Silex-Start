@@ -1,0 +1,24 @@
+{
+    "name"        : "Silex-Star",
+    "description" : "Estrutura básica de aplicação",
+    "type"        : "Silex-Edition",
+    "license"     : "PRIVATE",
+    "authors"     : [{
+                        "name"     : "Everlon Passos",
+                        "email"    : "dev@everlon.com.br",
+                        "homepage" : "http://everlon.com.br",
+                        "role"     : "Developer"
+                    }],
+    "type": "project",
+
+    "require": {
+        "php"                 : ">=5.3.3",
+        "silex/silex"         : "~1.2",
+        "symfony/twig-bridge" : "3.0.*@dev"
+    },
+
+    "autoload": {
+        "psr-0": { "": "src/" }
+    }
+
+}
