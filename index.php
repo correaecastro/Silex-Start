@@ -1,10 +1,17 @@
 <?php
+/**
+* Author: Everlon Passos (dev@everlon.com.br)
+* Date: update 11/08/2015 10:48:36
+*
+**/
+    require_once __DIR__.'/../src/vendor/autoload.php';
+    require_once __DIR__.'/../config/config.php';
+    require_once __DIR__.'/../config/routes.php';
 
-ini_set('display_errors', 0);
+    # Redirecionamento em caso de ERRO
+    $app->error(function(\Exception $e, $code) use ($app) {
+        if ($app['debug']) { return $app->redirect('/'); }
+    });
 
-require_once __DIR__.'/../vendor/autoload.php';
-
-$app = require __DIR__.'/../src/app.php';
-require __DIR__.'/../config/prod.php';
-require __DIR__.'/../src/controllers.php';
-$app->run();
+    //$app['http_cache']->run();
+    $app->run();
